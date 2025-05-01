@@ -57,13 +57,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+# start rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.config/rofi/themes/dark-blue.rasi
 
 # change focus
 bindsym $mod+h focus left
@@ -126,7 +121,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $wallpaperPath "~/Pictures/wallpaper.jpg"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -188,7 +182,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color               #1e222a
+set $bg-color              #1e222a
 set $inactive-bg-color     #2c313c
 set $text-color            #c8ccd4
 set $inactive-text-color   #5c6370
@@ -210,7 +204,7 @@ bar {
 	}
 }
 
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec i3lock --color "$bg-color"
 # Screenshoting bind
 bindsym $mod+Shift+p exec gnome-screenshot -i
 
@@ -229,10 +223,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
-exec --no-startup-id firefox
+exec --no-startup-id i3-msg "workspace 1; exec firefox"
 exec --no-startup-id i3-msg "workspace 2; exec gnome-terminal"
 
-exec_always feh --bg-scale $wallpaperPath
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
+exec compton
 exec --no-startup-id xinput set-prop 9 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2.7
 exec gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
