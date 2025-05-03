@@ -226,13 +226,12 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 exec --no-startup-id i3-msg "workspace 1; exec firefox"
 exec --no-startup-id i3-msg "workspace 2; exec gnome-terminal"
 
-exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-exec compton
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id xinput set-prop 9 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2.7
-exec gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+exec --no-startup-id gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+exec --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends
 
-focus_follows_mouse no
-popup_during_fullscreen smart
+floating_modifier Mod4
+focus_follows_mouse yes
 mouse_warping none
-
-
+popup_during_fullscreen smart
