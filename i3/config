@@ -208,7 +208,8 @@ exec --no-startup-id i3-msg "workspace 1; exec firefox"
 exec --no-startup-id i3-msg "workspace 2; exec gnome-terminal"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec --no-startup-id xinput set-prop 9 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2.7
+exec_always --no-startup-id ~/.config/polybar/startup.sh
+exec --no-startup-id xinput set-prop 8 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2.7
 exec --no-startup-id gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 exec --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends
 
