@@ -1,0 +1,46 @@
+* {
+  font: "JetBrainsMono Nerd Font 12";
+  border: 0;
+  padding: 6px;
+  background-color: rgba(30, 34, 42, 0.8); 
+  text-color: #c8ccd4;  
+}
+
+window {
+  width: 500px;
+  location: center;
+  anchor: center;
+  background-color: rgba(30, 34, 42, 0.8);
+}
+
+mainbox {
+  padding: 10px;
+  background-color: transparent;
+}
+
+listview {
+  fixed-height: false;
+  dynamic: true;
+  scrollbar: true;
+}
+
+element {
+  padding: 5px;
+  background-color: transparent;
+}
+
+element selected {
+  background-color: rgba(44, 49, 60, 0.8);
+  text-color: #ffffff;
+}
+
+entry {
+  padding: 8px;
+  background-color: transparent;
+  text-color: #c8ccd4;
+}
+
+scrollbar {
+  handle-color: #3b4252;
+  handle-width: 5px;
+}

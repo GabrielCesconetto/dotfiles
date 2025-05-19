@@ -1,1 +1,3 @@
-i3wm config w/ i3blocks that I'm currently using.
+# Dotfiles
+
+-Dotfiles for my i3wm, picom, polybar and rofi configuration files.
